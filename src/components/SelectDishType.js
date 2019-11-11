@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SelectDishType() {
+function SelectDishType(props) {
     return (
         <div>
             What would you like as an entree?

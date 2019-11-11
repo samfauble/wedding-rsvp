@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Attendance() {
+function Attendance(props) {
     return (
         <div>
             Are you attending?

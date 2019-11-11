@@ -1,6 +1,6 @@
 import React from 'react'
 
-function NumberAttending() {
+function NumberAttending(props) {
     return (
         <div>
             How many will be in attendance?
