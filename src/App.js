@@ -3,10 +3,7 @@ import './App.css';
 import WelcomeMessage from "./components/WelcomeMessage"
 import EventTitle from "./components/EventTitle"
 import FormSpace from "./components/FormSpace"
-import Attendance from "./components/Attendance"
-import NumberAttending from "./components/NumberAttending"
-import SelectDishType from "./components/SelectDishType"
-import Submit from "./components/Submit"
+
 
 function App() {
   return (
@@ -15,14 +12,9 @@ function App() {
         <WelcomeMessage />
         <EventTitle />
       </header>
-      <body>
-        <FormSpace>
-          <Attendance />
-          <NumberAttending />
-          <SelectDishType />
-          <Submit />
-        </FormSpace>
-      </body>
+      <div id="body">
+        <FormSpace />
+      </div>
       <footer></footer>
     </div>
   );
