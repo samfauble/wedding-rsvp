@@ -5,13 +5,14 @@ import SelectDishType from "./SelectDishType"
 import Submit from "./Submit"
 
 function FormSpace() {
+    /*Put State here*/
     return (
-        <div>
+        <form>
           <Attendance />
           <NumberAttending />
           <SelectDishType />
           <Submit />
-        </div>
+        </form>
     )
 }
 

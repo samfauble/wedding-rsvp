@@ -3,9 +3,7 @@ import React from 'react'
 function Submit() {
     return (
         <div>
-            <form>
-                <input type="submit" />
-            </form>
+            <input type="submit" />
         </div>
     )
 }
