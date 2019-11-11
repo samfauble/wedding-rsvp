@@ -1,24 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import WelcomeMessage from "./components/WelcomeMessage"
+import EventTitle from "./components/EventTitle"
+import FormSpace from "./components/FormSpace"
+import Attendance from "./components/Attendance"
+import NumberAttending from "./components/NumberAttending"
+import SelectDishType from "./components/SelectDishType"
+import Submit from "./components/Submit"
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello World!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <WelcomeMessage />
+        <EventTitle />
       </header>
+      <body>
+        <FormSpace>
+          <Attendance />
+          <NumberAttending />
+          <SelectDishType />
+          <Submit />
+        </FormSpace>
+      </body>
+      <footer></footer>
     </div>
   );
 }
