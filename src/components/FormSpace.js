@@ -53,7 +53,7 @@ class FormSpace extends React.Component {
                     <input type="text" maxLength="2" value={this.state.guestNumber} onChange={this.setGuestNumber}/>
                 </div>
                 <div>
-                    What would you like as an entree?
+                    What would you like as a main course?
                     <div>
                         <select value={this.state.dishType} onChange={this.setDishType}>
                             <option value="fish">Fish</option>
