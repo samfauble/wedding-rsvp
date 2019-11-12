@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import { ReactComponent } from '*.svg'
+import React from 'react'
 
 
 class FormSpace extends React.Component {
@@ -8,10 +7,15 @@ class FormSpace extends React.Component {
         super(props)
     
         this.state = {
-             isGoing: false,
+             isGoing: "",
              guestNumber: 0,
              dishType: []
         }
+        this.setIsGoing = this.setIsGoing.bind(this);
+    }
+
+    setIsGoing (event) {
+        this.setState({isGoing: event.target.id}, console.log(this.state.isGoing))
     }
     
 
@@ -21,11 +25,11 @@ class FormSpace extends React.Component {
                 <div>
                     Are you attending?
                     <div>
-                        <input type="radio" id="yes" name="yesNo" value="yes" />
+                        <input type="radio" id="no" name="yesNo" value={this.state.isGoing} onChange={this.setIsGoing} />
                         <label htmlFor="yes">Yes</label>
                     </div>
                     <div>
-                        <input type="radio" id="no" name="yesNo" />
+                        <input type="radio" id="yes" name="yesNo" value={this.state.isGoing} onChange={this.setIsGoing} />
                         <label htmlFor="no">No</label>
                     </div>
                 </div>
