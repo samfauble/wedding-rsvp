@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import WelcomeMessage from "./components/WelcomeMessage"
 import EventTitle from "./components/EventTitle"
-import FormSpace from "./components/FormSpace"
+import FormField from "./components/FormField"
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
         <EventTitle />
       </header>
       <div id="body">
-        <FormSpace />
+        <FormField />
       </div>
       <footer></footer>
     </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import Attendance from "./Attendance"
 import SelectDishType from './SelectDishType';
 import NumberAttending from './NumberAttending';
 
@@ -41,15 +42,7 @@ class FormSpace extends React.Component {
     render(){
         return (
             <form>
-                <div>
-                    Are you attending?
-                    <div>
-                        <select value={this.state.isGoing} onChange={this.setIsGoing}>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
-                        </select>
-                    </div>
-                </div>
+                <Attendance value={this.state.value} setGo={this.setIsGoing} />
                 <NumberAttending  value={this.state.guestNumber} setNumber={this.setGuestNumber} />
                 <SelectDishType value={this.state.dishType} setMeal={this.setDishType} />
                 <div>
