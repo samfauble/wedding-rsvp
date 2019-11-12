@@ -12,10 +12,15 @@ class FormSpace extends React.Component {
              dishType: []
         }
         this.setIsGoing = this.setIsGoing.bind(this);
+        this.setGuestNumber = this.setGuestNumber.bind(this)
     }
 
-    setIsGoing (event) {
-    this.setState({isGoing: event.target.value}, ()=>{console.log(this.state.isGoing)})
+    setIsGoing(event){
+    this.setState({isGoing: event.target.value})
+    }
+
+    setGuestNumber(event){
+        this.setState({guestNumber: event.target.value})
     }
     
 
@@ -32,27 +37,8 @@ class FormSpace extends React.Component {
                     </div>
                 </div>
                 <div>
-                How many will be in attendance?
-                    <div>
-                        <input type="radio" id="one" name="number"/>
-                        <label htmlFor="one">One person</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="two" name="number"/>
-                        <label htmlFor="two">Two people</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="three" name="number"/>
-                        <label htmlFor="three">Three people</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="four" name="number"/>
-                        <label htmlFor="four">Four people</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="five" name="number"/>
-                        <label htmlFor="five">Five people</label>
-                    </div>
+                    How many will be in attendance?
+                    <input type="text" maxLength="2" value={this.state.guestNumber} onChange={this.setGuestNumber}/>
                 </div>
                 <div>
                     What would you like as an entree?
