@@ -9,20 +9,32 @@ class FormSpace extends React.Component {
         this.state = {
              isGoing: "yes",
              guestNumber: 0,
-             dishType: []
+             dishType: ""
         }
         this.setIsGoing = this.setIsGoing.bind(this);
         this.setGuestNumber = this.setGuestNumber.bind(this)
+        this.setDishType = this.setDishType.bind(this)
+        this.displayAnswers = this.displayAnswers.bind(this)
     }
 
     setIsGoing(event){
-    this.setState({isGoing: event.target.value})
+        this.setState({isGoing: event.target.value})
     }
 
     setGuestNumber(event){
         this.setState({guestNumber: event.target.value})
     }
+
+    setDishType(event){
+        this.setState({dishType: event.target.value})
+    }
     
+    displayAnswers(event){
+        event.preventDefault();
+        alert(`Your answers: Attendance:${this.state.isGoing},
+            Number of Guests:${this.state.guestNumber},
+            Dish Type:${this.state.dishType}`)
+    }
 
     render(){
         return (
@@ -43,12 +55,15 @@ class FormSpace extends React.Component {
                 <div>
                     What would you like as an entree?
                     <div>
-                        <select>
+                        <select value={this.state.dishType} onChange={this.setDishType}>
                             <option value="fish">Fish</option>
                             <option value="steak">Steak</option>
                             <option value="pasta">Pasta</option>
                         </select>
                     </div>
+                </div>
+                <div>
+                    <button type="submit" onClick={this.displayAnswers}>Submit</button>
                 </div>
             </form>
         );
