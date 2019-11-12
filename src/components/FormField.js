@@ -5,7 +5,7 @@ import NumberAttending from './NumberAttending';
 import Submit from "./Submit";
 
 
-class FormSpace extends React.Component {
+class FormField extends React.Component {
 
     constructor(props) {
         super(props)
@@ -52,4 +52,4 @@ class FormSpace extends React.Component {
     }
 }
 
-export default FormSpace
+export default FormField
