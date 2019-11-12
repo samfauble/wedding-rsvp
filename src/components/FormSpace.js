@@ -1,4 +1,5 @@
 import React from 'react'
+import SelectDishType from './SelectDishType';
 
 
 class FormSpace extends React.Component {
@@ -9,7 +10,7 @@ class FormSpace extends React.Component {
         this.state = {
              isGoing: "yes",
              guestNumber: 0,
-             dishType: ""
+             dishType: [""]
         }
         this.setIsGoing = this.setIsGoing.bind(this);
         this.setGuestNumber = this.setGuestNumber.bind(this)
@@ -50,18 +51,9 @@ class FormSpace extends React.Component {
                 </div>
                 <div>
                     How many will be in attendance?
-                    <input type="text" maxLength="2" value={this.state.guestNumber} onChange={this.setGuestNumber}/>
+                    <input type="number" value={this.state.guestNumber} onChange={this.setGuestNumber}/>
                 </div>
-                <div>
-                    What would you like as a main course?
-                    <div>
-                        <select value={this.state.dishType} onChange={this.setDishType}>
-                            <option value="fish">Fish</option>
-                            <option value="steak">Steak</option>
-                            <option value="pasta">Pasta</option>
-                        </select>
-                    </div>
-                </div>
+                <SelectDishType value={this.state.dishType} setMeal={this.setDishType} />
                 <div>
                     <button type="submit" onClick={this.displayAnswers}>Submit</button>
                 </div>
