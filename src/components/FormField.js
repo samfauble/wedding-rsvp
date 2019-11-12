@@ -43,9 +43,18 @@ class FormField extends React.Component {
     render(){
         return (
             <form>
-                <Attendance value={this.state.value} setGo={this.setIsGoing} />
-                <NumberAttending  value={this.state.guestNumber} setNumber={this.setGuestNumber} />
-                <SelectDishType value={this.state.dishType} setMeal={this.setDishType} />
+                <Attendance 
+                    value={this.state.value} 
+                    setGo={this.setIsGoing} />
+                <NumberAttending  
+                    value={this.state.guestNumber} 
+                    setNumber={this.setGuestNumber} 
+                    isGoing={this.state.isGoing} />
+                <SelectDishType 
+                    value={this.state.dishType} 
+                    setMeal={this.setDishType} 
+                    isGoing={this.state.isGoing} 
+                    number={this.state.guestNumber} />
                 <Submit submit={this.displayAnswers} />
             </form>
         );
