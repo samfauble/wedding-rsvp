@@ -1,7 +1,8 @@
-import React from 'react'
-import Attendance from "./Attendance"
+import React from 'react';
+import Attendance from "./Attendance";
 import SelectDishType from './SelectDishType';
 import NumberAttending from './NumberAttending';
+import Submit from "./Submit";
 
 
 class FormSpace extends React.Component {
@@ -45,9 +46,7 @@ class FormSpace extends React.Component {
                 <Attendance value={this.state.value} setGo={this.setIsGoing} />
                 <NumberAttending  value={this.state.guestNumber} setNumber={this.setGuestNumber} />
                 <SelectDishType value={this.state.dishType} setMeal={this.setDishType} />
-                <div>
-                    <button type="submit" onClick={this.displayAnswers}>Submit</button>
-                </div>
+                <Submit submit={this.displayAnswers} />
             </form>
         );
     }

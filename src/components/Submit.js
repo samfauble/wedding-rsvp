@@ -3,7 +3,7 @@ import React from 'react'
 function Submit(props) {
     return (
         <div>
-            <input type="submit" />
+            <button type="submit" onClick={props.submit}>Submit</button>
         </div>
     )
 }
