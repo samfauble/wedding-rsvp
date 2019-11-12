@@ -7,7 +7,7 @@ class FormSpace extends React.Component {
         super(props)
     
         this.state = {
-             isGoing: "",
+             isGoing: "yes",
              guestNumber: 0,
              dishType: []
         }
@@ -15,7 +15,7 @@ class FormSpace extends React.Component {
     }
 
     setIsGoing (event) {
-        this.setState({isGoing: event.target.id}, console.log(this.state.isGoing))
+    this.setState({isGoing: event.target.value}, ()=>{console.log(this.state.isGoing)})
     }
     
 
@@ -25,12 +25,10 @@ class FormSpace extends React.Component {
                 <div>
                     Are you attending?
                     <div>
-                        <input type="radio" id="no" name="yesNo" value={this.state.isGoing} onChange={this.setIsGoing} />
-                        <label htmlFor="yes">Yes</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="yes" name="yesNo" value={this.state.isGoing} onChange={this.setIsGoing} />
-                        <label htmlFor="no">No</label>
+                        <select value={this.state.isGoing} onChange={this.setIsGoing}>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
                     </div>
                 </div>
                 <div>
