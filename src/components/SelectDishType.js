@@ -1,8 +1,9 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 function CreateListItem(props){
+    const [val, setVal] = useState("fish");
     return(
-            <select>
+            <select value={val} onChange={(e)=>setVal(e.target.val)}>
                 <option value="fish">Fish</option>
                 <option value="steak">Steak</option>
                 <option value="pasta">Pasta</option>
@@ -13,11 +14,17 @@ function CreateListItem(props){
 
 function SelectDishType(props) {
     const rows = [];
+ // const listVals = [];
     const number = props.number;
     for (let i=1; i<=number; i++){
         rows.push(
         <CreateListItem key={"item"+i} id={"item"+i} />)
     }
+    /*
+    rows.map((item)=>{
+        const itemValue = item.value;
+        listVals.push(itemValue);
+    }) */
     return (
         <div 
         name="food"
