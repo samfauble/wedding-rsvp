@@ -4,16 +4,15 @@ import SelectDishType from './SelectDishType';
 import NumberAttending from './NumberAttending';
 import Submit from "./Submit";
 
-
 class FormField extends React.Component {
-
+    
     constructor(props) {
         super(props)
     
         this.state = {
              isGoing: "yes",
-             guestNumber: 0,
-             dishType: [""]
+             guestNumber: 1,
+             dishType: "fish"
         }
         this.setIsGoing = this.setIsGoing.bind(this);
         this.setGuestNumber = this.setGuestNumber.bind(this)
@@ -30,7 +29,13 @@ class FormField extends React.Component {
     }
 
     setDishType(event){
-        this.setState({dishType: event.target.value})
+        const number = this.state.guestNumber;
+        const vals = event.target.value;
+        const rows = [];
+        for(let i=1; i<=number; i++){
+            rows.push(vals);
+        }
+        this.setState({dishType: rows})
     }
     
     displayAnswers(event){
@@ -54,7 +59,8 @@ class FormField extends React.Component {
                     value={this.state.dishType} 
                     setMeal={this.setDishType} 
                     isGoing={this.state.isGoing} 
-                    number={this.state.guestNumber} />
+                    number={this.state.guestNumber}
+                    multiple={true} />
                 <Submit submit={this.displayAnswers} />
             </form>
         );
