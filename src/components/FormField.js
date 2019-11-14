@@ -11,7 +11,7 @@ class FormField extends React.Component {
     
         this.state = {
              isGoing: "yes",
-             guestNumber: 1,
+             guestNumber: 0,
              dishType: "fish"
         }
         this.setIsGoing = this.setIsGoing.bind(this);

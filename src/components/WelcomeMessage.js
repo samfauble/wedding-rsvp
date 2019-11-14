@@ -3,7 +3,7 @@ import React from 'react'
 function WelcomeMessage() {
     return (
         <div>
-            <p>Welcome, <b>name</b>. Please RSVP for:</p>
+            <p>Welcome, dear guest. Please RSVP for:</p>
         </div>
     )
 }

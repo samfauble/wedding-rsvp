@@ -3,11 +3,12 @@ import React, {useState} from 'react'
 function CreateListItem(props){
     const [val, setVal] = useState("fish");
     return(
-            <select value={val} onChange={(e)=>setVal(e.target.val)}>
-                <option value="fish">Fish</option>
-                <option value="steak">Steak</option>
-                <option value="pasta">Pasta</option>
-            </select>
+        <select value={val} onChange={(e)=>setVal(e.target.val)}>
+            <option value="fish">Fish</option>
+            <option value="steak">Steak</option>
+            <option value="pasta">Pasta</option>
+        </select>
+        
     )
 }
 
@@ -29,8 +30,8 @@ function SelectDishType(props) {
         <div 
         name="food"
         value={props.value}
-        onChange={props.setMeal} 
-        className={props.isGoing==="yes" ? "show" : "hide"}>
+        onChange={props.setMeal}
+        className={props.number<=0 ? "hide" : "show"}>
             What would you like as a main course? <br/>
             {rows}
         </div>
